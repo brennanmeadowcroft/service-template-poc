@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "common-modules": "github:brennanmeadowcroft/common-modules#version_1",
-    "lodash.merge": "^4.6.1"
+    "lodash.merge": "^4.6.1",
+    "shelljs": "^0.8.3"
   }
 }
