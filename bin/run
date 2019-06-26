@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+const shelljs = require('shelljs')
+const merge = require('lodash.merge')
+const baseConfig = require('common-modules').baseConfig
+const appConfig = require('../config.json')
+
+console.log('spinning up')
+console.log('Original config')
+console.log(baseConfig)
+
+console.log('merging config')
+const mergedConfig = merge(baseConfig, appConfig)
+console.log(mergedConfig)
+
+shelljs.exec('echo "this is a shell command"')
+shelljs.exec('echo "we could run other commands here to deploy and whatnot"')
+
+process.exit()
