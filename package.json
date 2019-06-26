@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "common-modules": "github:brennanmeadowcroft/common-modules#version_1",
+    "common-modules": "github:brennanmeadowcroft/common-modules#version_2",
     "lodash.merge": "^4.6.1"
   }
 }
