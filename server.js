@@ -1,9 +1,10 @@
 const merge = require('lodash.merge')
+const commonModules = require('common-modules')
 
-const appSpecificConfig = require('')
-const logger = require('common-modules').logger
-const baseConfig = require('common-modules').baseConfig
-const expressWrapper = require('common-modules').server
+const appSpecificConfig = require('./config.json')
+const logger = commonModules.logger
+const baseConfig = commonModules.baseConfig
+const expressWrapper = commonModules.server
 const app = expressWrapper()
 
 app.get('/', function (req, res) {
@@ -20,6 +21,11 @@ app.get('/modifiedConfig', function (req, res) {
     const modifiedConfig = merge(baseConfig, appSpecificConfig)
     logger.info({ baseConfig, appSpecificConfig, modifiedConfig }, 'Merged config')
     res.send(modifiedConfig)
+})
+
+app.get('/env', function (req, res) {
+    const currentEnv = process.env.NODE_ENV || 'local'
+    res.send(currentEnv)    
 })
 
 app.listen(3000);
